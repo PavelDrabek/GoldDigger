@@ -1,0 +1,69 @@
+# =============== #
+# Unity generated #
+# =============== #
+Assets/Game/Scenes/
+Assets/Game/Scenes.meta
+
+Library/*
+Library/ShaderCache
+Library/AssetImportState
+Library/AssetServerCacheV3
+Library/FailedAssetImports.txt
+Library/ScriptAssemblies
+Library/ScriptMapper
+Library/assetDatabase3
+Library/cache
+Library/expandedItems
+Library/metadata
+Library/previews
+Library/guidmapper
+Library/CurrentLayout.dwlt
+Library/EditorUserBuildSettings.asset
+Library/CurrentLayout.dwlt
+Library/InspectorExpandedItems.asset
+Temp
+build
+IOS
+Assets/Scaleform/Lib
+!Assets/Plugins/iOS
+Assets/Scaleform/Bin/Mac_Tools
+Assets/Scaleform/Bin/PC_Tools
+Assets/Scaleform/Bin/Mac Tools
+Assets/Scaleform/Bin/PC Tools
+*.log
+obj/debug/
+
+ProjectSettings/EditorBuildSettings.asset
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+*.dwlt
+
+Library/ShaderCache/
+Assets/IMPORT/*
+Assets/AllSky/*
+Assets/PETR/*
