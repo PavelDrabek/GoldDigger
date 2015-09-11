@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
 
 	public MapGenerator mapGenerator;
 	public ScoreManager scoreManager;
+	public CameraShake cameraShake;
 	public Map map;
 	public Gun gun;
 
@@ -25,18 +26,23 @@ public class GameController : MonoBehaviour {
 	public Text timeText;
 	public Text dynamiteText;
 
+	private bool paused;
 	private float speedUp = 1;
-	public float TimeFlow { get { return Time.deltaTime * speedUp; } }
+	public float TimeFlow { get { return paused ? 0 : Time.deltaTime * speedUp; } }
+	public bool IsPause { get { return paused; } }
 
 	private float timeLeft;
 
 	private int actualLevel;
 	public int ActualLevel { get { return actualLevel; } }
 
+	private bool isMainButtonPressed;
+
 	// TODO: 19 level bude mit dort
+	// TODO: Postupem casu zvedat nutne skore pro splneni levelu 
 	// TODO: Hlasky po sebrani sutru, dynamitu, prohre, vyhre ...
-	// TODO: Camera shake pri dynamitu
-	// TODO: Hra pokracuje pri pusteni speedu v ukoncene mape
+	// TODO: Obrazovka s ovladanim a vo co go (ze to je pro Vercu, ...)
+	// TODO: Zebricek s historii skore
 	// TODO: Dynamit do urciteho okruhu???
 
 	void Start () {
@@ -80,17 +86,32 @@ public class GameController : MonoBehaviour {
 		scoreManager.SetNeedScore(200);
 	}
 
+	public void OnMainButtonPressed(bool down) {
+		if(gun.IsOn) {
+			SpeedUp(down);
+		} else {
+			if(isMainButtonPressed && !down) {
+				gun.StartHook();
+			}
+			isMainButtonPressed = true;
+		}
+
+		if(!down) {
+			isMainButtonPressed = false;
+		}
+	}
+
 	public void SpeedUp(bool value) {
 		speedUp = value ? 3 : 1;
 	}
 
 	public void Pause() {
-		speedUp = 0;
+		paused = true;
 		gun.animator.enabled = false;
 	}
 
 	public void Continue() {
-		speedUp = 1;
+		paused = false;
 		gun.animator.enabled = true;
 	}
 

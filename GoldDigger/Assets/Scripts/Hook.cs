@@ -14,6 +14,8 @@ public class Hook : MonoBehaviour {
 	GameObject child;
 	LineRenderer line;
 
+	public bool IsOn { get { return actualSpeed != 0; } }
+
 	void Awake () {
 		origin = myTransform.localPosition;
 		line = GetComponent<LineRenderer>();

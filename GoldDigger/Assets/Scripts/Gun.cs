@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour {
 	public float gunSpeed;
 
 	public int dynamites;
+	public bool IsOn { get { return hook.IsOn; } }
 
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space)) {
@@ -33,6 +34,7 @@ public class Gun : MonoBehaviour {
 		if(dynamites > 0) {
 			GameController.Instance.BlowsAll(Gem.GemType.Rock);
 			dynamites--;
+			GameController.Instance.cameraShake.StartShaking();
 		}
 		GameController.Instance.dynamiteText.text = dynamites.ToString();
 	}
