@@ -1,9 +1,14 @@
 ﻿<Win>Výborně</Win>
+<Win>A jede se dál</Win>
 <Win>Jsi nejlepší</Win>
-<Win>To vypadá na že jsi trénovala</Win>
+<Win>Vypadá to, že jsi trénovala</Win>
 <Win>Jen tak dál</Win>
 <Win>Pokračuj!</Win>
 <Win>Čeká tě další level</Win>
+<Win>Jsi dobrá</Win>
+<Win>Držím palce v dalším kole</Win>
+<Win>Další kolo bude těžší</Win>
+<Win>Další kolo zvládneš hravě</Win>
 
 <Loose>Zkus to ještě jednou :)</Loose>
 <Loose>Teď to třeba vyjde</Loose>
@@ -11,6 +16,9 @@
 <Loose>Chce to trénovat</Loose>
 <Loose>Stejně tě miluju :*</Loose>
 <Loose>Jaj to je škoda</Loose>
+<Loose>To bylo těsné</Loose>
+<Loose>A následuje level 1</Loose>
+<Loose>To je pech</Loose>
 
 <LooseClose>Chyběl takový kousíček :(</LooseClose>
 <LooseClose>Jaj to bylo těsné</LooseClose>
@@ -25,7 +33,11 @@
 
 <ExitGame>Opravdu chceš ukončit hru?</ExitGame>
 <ExitGame>Fakt chceš skončit? :(</ExitGame>
-<ExitGame>Jsi si jista?</ExitGame>
+<ExitGame>Jsi si jistá?</ExitGame>
 <ExitGame>Neopouštěj nás!!! :(</ExitGame>
 <ExitGame>Ty končíš?</ExitGame>
 <ExitGame>Opravdu to chceš udělat?</ExitGame>
+<ExitGame>Verunko? Fakt?</ExitGame>
+<ExitGame>Verunečko? Fakt?</ExitGame>
+<ExitGame>Jsi si jisťoučká?</ExitGame>
+<ExitGame>Jako fakt hele?</ExitGame>

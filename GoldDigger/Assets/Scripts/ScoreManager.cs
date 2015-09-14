@@ -41,6 +41,11 @@ public class ScoreManager : MonoBehaviour {
 		scoreNeedText.text = "Zbývá: " + scoreNeed.ToString();
 	}
 
+	public void SetNeedScoreByLevel(int level) {
+		int s = 200 + (level / 5) * 30;
+		SetNeedScore(s);
+	}
+
 	public void ResetScore() {
 		score = 0;
 		scoreText.text = "Skóre: " + score.ToString();

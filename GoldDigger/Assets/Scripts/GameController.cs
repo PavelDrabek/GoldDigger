@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour {
 	public GameObject nextLevelScreen;
 	public GameObject gameOverScreen;
 	public GameObject menuScreen;
+	public GameObject bDayObject;
+	public GameObject bDayScreen;
 
 	public Text scoreText;
 	public Text scoreMisText;
@@ -38,10 +40,7 @@ public class GameController : MonoBehaviour {
 
 	private bool isMainButtonPressed;
 
-	// TODO: 19 level bude mit dort
-	// TODO: Postupem casu zvedat nutne skore pro splneni levelu 
-	// TODO: Hlasky po sebrani sutru, dynamitu, prohre, vyhre ...
-	// TODO: Obrazovka s ovladanim a vo co go (ze to je pro Vercu, ...)
+	// TODO: Hudba
 	// TODO: Zebricek s historii skore
 	// TODO: Dynamit do urciteho okruhu???
 
@@ -80,10 +79,15 @@ public class GameController : MonoBehaviour {
 
 	public void StartNewLevel() {
 		actualLevel++;
-		levelText.text = "Level: " + actualLevel.ToString();
-		mapGenerator.NewLevel();
 		timeLeft = 60;
-		scoreManager.SetNeedScore(200);
+		if(actualLevel == 19) {
+			ShowBDayLevel();
+			Pause();
+		} else {
+			mapGenerator.NewLevel();
+			scoreManager.SetNeedScoreByLevel(actualLevel);
+		}
+		levelText.text = "Level: " + actualLevel.ToString();
 	}
 
 	public void OnMainButtonPressed(bool down) {
@@ -131,6 +135,11 @@ public class GameController : MonoBehaviour {
 			}
 		}
 
+	}
+
+	public void ShowBDayLevel() {
+		bDayObject.SetActive(true);
+		bDayScreen.SetActive(true);
 	}
 
 	public void QuitApplication() {
