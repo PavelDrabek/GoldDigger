@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
 
 	private float timeLeft;
 
-	private int actualLevel;
+	public int actualLevel = 0;
 	public int ActualLevel { get { return actualLevel; } }
 
 	private bool isMainButtonPressed;
@@ -71,7 +71,11 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void StartNewGame() {
-		actualLevel = 0;
+		if (actualLevel > 10) {
+			actualLevel = 9;
+		} else {
+			actualLevel = 0;
+		}
 		StartNewLevel();
 		scoreManager.ResetScore();
 		gun.ResetDynamites();
@@ -84,7 +88,7 @@ public class GameController : MonoBehaviour {
 			ShowBDayLevel();
 			Pause();
 		} else {
-			mapGenerator.NewLevel();
+			mapGenerator.NewLevel(actualLevel);
 			scoreManager.SetNeedScoreByLevel(actualLevel);
 		}
 		levelText.text = "Level: " + actualLevel.ToString();

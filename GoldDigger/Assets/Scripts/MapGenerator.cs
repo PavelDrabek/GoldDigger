@@ -36,10 +36,11 @@ public class MapGenerator : MonoBehaviour {
 		}
 	}
 
-	public void NewLevel() {
+	public void NewLevel(int level) {
 		CalcBorders();
-		
 		Clear();
+
+		stuffs[0].amount = (level > 10) ? 4 : 3;
 		Generate();
 	}
 
